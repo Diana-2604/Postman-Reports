@@ -1,0 +1,25 @@
+2023-02-09T08:00:20.6465074Z ##[group]Run actions/checkout@v3
+2023-02-09T08:00:20.6465363Z with:
+2023-02-09T08:00:20.6465847Z   repository: Diana-2604/Postman-Reports
+2023-02-09T08:00:20.6466373Z   token: ***
+2023-02-09T08:00:20.6466579Z   ssh-strict: true
+2023-02-09T08:00:20.6466806Z   persist-credentials: true
+2023-02-09T08:00:20.6467016Z   clean: true
+2023-02-09T08:00:20.6467218Z   fetch-depth: 1
+2023-02-09T08:00:20.6467422Z   lfs: false
+2023-02-09T08:00:20.6467602Z   submodules: false
+2023-02-09T08:00:20.6467837Z   set-safe-directory: true
+2023-02-09T08:00:20.6468057Z ##[endgroup]
+2023-02-09T08:00:20.6608729Z ##[command]/usr/bin/docker exec  df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b sh -c "cat /etc/*release | grep ^ID"
+2023-02-09T08:00:22.6878471Z Syncing repository: Diana-2604/Postman-Reports
+2023-02-09T08:00:22.6955235Z ##[group]Getting Git version info
+2023-02-09T08:00:22.6955847Z Working directory is '/__w/Postman-Reports/Postman-Reports'
+2023-02-09T08:00:22.6976807Z ##[endgroup]
+2023-02-09T08:00:22.6983213Z Deleting the contents of '/__w/Postman-Reports/Postman-Reports'
+2023-02-09T08:00:22.6990234Z The repository will be downloaded using the GitHub REST API
+2023-02-09T08:00:22.6990654Z To create a local Git repository instead, add Git 2.18 or higher to the PATH
+2023-02-09T08:00:22.6995820Z Downloading the archive
+2023-02-09T08:00:23.4375683Z Writing archive to disk
+2023-02-09T08:00:23.4390435Z Extracting the archive
+2023-02-09T08:00:23.4423795Z [command]/bin/tar xz -C /__w/Postman-Reports/Postman-Reports/ed1a95d4-bbc8-4d5d-82d5-3ff0ee3d6829 -f /__w/Postman-Reports/Postman-Reports/ed1a95d4-bbc8-4d5d-82d5-3ff0ee3d6829.tar.gz
+2023-02-09T08:00:23.4560588Z Resolved version Diana-2604-Postman-Reports-a871f25

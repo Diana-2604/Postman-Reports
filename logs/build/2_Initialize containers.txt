@@ -1,0 +1,47 @@
+2023-02-09T08:00:14.5699933Z ##[group]Checking docker version
+2023-02-09T08:00:14.5716956Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2023-02-09T08:00:14.7554110Z '1.41'
+2023-02-09T08:00:14.7571219Z Docker daemon API version: '1.41'
+2023-02-09T08:00:14.7571702Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2023-02-09T08:00:14.7834797Z '1.41'
+2023-02-09T08:00:14.7855072Z Docker client API version: '1.41'
+2023-02-09T08:00:14.7861614Z ##[endgroup]
+2023-02-09T08:00:14.7866140Z ##[group]Clean up resources from previous jobs
+2023-02-09T08:00:14.7872160Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=49859c"
+2023-02-09T08:00:14.8112666Z ##[command]/usr/bin/docker network prune --force --filter "label=49859c"
+2023-02-09T08:00:14.8342533Z ##[endgroup]
+2023-02-09T08:00:14.8342917Z ##[group]Create local container network
+2023-02-09T08:00:14.8354878Z ##[command]/usr/bin/docker network create --label 49859c github_network_d7336174b127467b84c112170961cd1b
+2023-02-09T08:00:14.9080247Z e88112b9754485123dcf06fc865eaa543a5c013df3a26210a9ec96b3c3a0dddc
+2023-02-09T08:00:14.9134542Z ##[endgroup]
+2023-02-09T08:00:14.9227373Z ##[group]Starting job container
+2023-02-09T08:00:14.9247956Z ##[command]/usr/bin/docker pull postman/newman
+2023-02-09T08:00:14.9435251Z Using default tag: latest
+2023-02-09T08:00:16.2159435Z latest: Pulling from postman/newman
+2023-02-09T08:00:16.2160850Z fa637f525e1a: Pulling fs layer
+2023-02-09T08:00:17.0303358Z fa637f525e1a: Verifying Checksum
+2023-02-09T08:00:17.0304103Z fa637f525e1a: Download complete
+2023-02-09T08:00:19.3714935Z fa637f525e1a: Pull complete
+2023-02-09T08:00:19.3765456Z Digest: sha256:8c6463863869941ab58a27655a6810fcdc01943cef82cfbda73bd6459e1751fa
+2023-02-09T08:00:19.3782266Z Status: Downloaded newer image for postman/newman:latest
+2023-02-09T08:00:19.3804928Z docker.io/postman/newman:latest
+2023-02-09T08:00:19.3935674Z ##[command]/usr/bin/docker create --name 1c931717376f4b4b88d2fa564e0dc41a_postmannewman_82f04b --label 49859c --workdir /__w/Postman-Reports/Postman-Reports --network github_network_d7336174b127467b84c112170961cd1b  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/runners/2.301.1/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" postman/newman "-f" "/dev/null"
+2023-02-09T08:00:20.1864207Z df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b
+2023-02-09T08:00:20.1878732Z ##[command]/usr/bin/docker start df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b
+2023-02-09T08:00:20.5616302Z df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b
+2023-02-09T08:00:20.5639862Z ##[command]/usr/bin/docker ps --all --filter id=df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2023-02-09T08:00:20.5826149Z df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b Up Less than a second
+2023-02-09T08:00:20.5847414Z ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b
+2023-02-09T08:00:20.6037930Z CI=true
+2023-02-09T08:00:20.6038732Z HOME=/github/home
+2023-02-09T08:00:20.6039022Z GITHUB_ACTIONS=true
+2023-02-09T08:00:20.6039295Z PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2023-02-09T08:00:20.6039617Z NODE_VERSION=16.13.1
+2023-02-09T08:00:20.6039829Z YARN_VERSION=1.22.15
+2023-02-09T08:00:20.6040029Z LC_ALL=en_US.UTF-8
+2023-02-09T08:00:20.6040235Z LANG=en_US.UTF-8
+2023-02-09T08:00:20.6040450Z LANGUAGE=en_US.UTF-8
+2023-02-09T08:00:20.6040687Z ALPINE_NODE_REPO=oznu/alpine-node
+2023-02-09T08:00:20.6065616Z ##[endgroup]
+2023-02-09T08:00:20.6097345Z ##[group]Waiting for all services to be ready
+2023-02-09T08:00:20.6099398Z ##[endgroup]

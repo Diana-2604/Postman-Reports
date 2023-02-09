@@ -1,0 +1,220 @@
+2023-02-09T08:00:06.1199807Z Requested labels: ubuntu-latest
+2023-02-09T08:00:06.1199846Z Job defined at: Diana-2604/Postman-Reports/.github/workflows/github-actions-demo.yml@refs/pull/4/merge
+2023-02-09T08:00:06.1199870Z Waiting for a runner to pick up this job...
+2023-02-09T08:00:06.3382069Z Job is waiting for a hosted runner to come online.
+2023-02-09T08:00:10.3401073Z Job is about to start running on the hosted runner: GitHub Actions 2 (hosted)
+2023-02-09T08:00:12.9338387Z Current runner version: '2.301.1'
+2023-02-09T08:00:12.9367811Z ##[group]Operating System
+2023-02-09T08:00:12.9368478Z Ubuntu
+2023-02-09T08:00:12.9368791Z 22.04.1
+2023-02-09T08:00:12.9369026Z LTS
+2023-02-09T08:00:12.9369322Z ##[endgroup]
+2023-02-09T08:00:12.9369648Z ##[group]Runner Image
+2023-02-09T08:00:12.9369989Z Image: ubuntu-22.04
+2023-02-09T08:00:12.9370331Z Version: 20230129.2
+2023-02-09T08:00:12.9370844Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20230129.2/images/linux/Ubuntu2204-Readme.md
+2023-02-09T08:00:12.9371436Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20230129.2
+2023-02-09T08:00:12.9371878Z ##[endgroup]
+2023-02-09T08:00:12.9372266Z ##[group]Runner Image Provisioner
+2023-02-09T08:00:12.9372563Z 2.0.108.1
+2023-02-09T08:00:12.9372869Z ##[endgroup]
+2023-02-09T08:00:12.9373567Z ##[group]GITHUB_TOKEN Permissions
+2023-02-09T08:00:12.9374140Z Contents: read
+2023-02-09T08:00:12.9374418Z Metadata: read
+2023-02-09T08:00:12.9374889Z Packages: read
+2023-02-09T08:00:12.9375233Z ##[endgroup]
+2023-02-09T08:00:12.9378881Z Secret source: Actions
+2023-02-09T08:00:12.9379378Z Prepare workflow directory
+2023-02-09T08:00:13.0453347Z Prepare all required actions
+2023-02-09T08:00:13.0638008Z Getting action download info
+2023-02-09T08:00:13.3842876Z Download action repository 'actions/checkout@v3' (SHA:ac593985615ec2ede58e132d2e21d2b1cbd6127c)
+2023-02-09T08:00:14.5015927Z Complete job name: build
+2023-02-09T08:00:14.5699957Z ##[group]Checking docker version
+2023-02-09T08:00:14.5716988Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2023-02-09T08:00:14.7554212Z '1.41'
+2023-02-09T08:00:14.7571247Z Docker daemon API version: '1.41'
+2023-02-09T08:00:14.7571707Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2023-02-09T08:00:14.7834878Z '1.41'
+2023-02-09T08:00:14.7855090Z Docker client API version: '1.41'
+2023-02-09T08:00:14.7861643Z ##[endgroup]
+2023-02-09T08:00:14.7866171Z ##[group]Clean up resources from previous jobs
+2023-02-09T08:00:14.7872181Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=49859c"
+2023-02-09T08:00:14.8112708Z ##[command]/usr/bin/docker network prune --force --filter "label=49859c"
+2023-02-09T08:00:14.8342583Z ##[endgroup]
+2023-02-09T08:00:14.8342938Z ##[group]Create local container network
+2023-02-09T08:00:14.8354999Z ##[command]/usr/bin/docker network create --label 49859c github_network_d7336174b127467b84c112170961cd1b
+2023-02-09T08:00:14.9080336Z e88112b9754485123dcf06fc865eaa543a5c013df3a26210a9ec96b3c3a0dddc
+2023-02-09T08:00:14.9134574Z ##[endgroup]
+2023-02-09T08:00:14.9227389Z ##[group]Starting job container
+2023-02-09T08:00:14.9247981Z ##[command]/usr/bin/docker pull postman/newman
+2023-02-09T08:00:14.9435306Z Using default tag: latest
+2023-02-09T08:00:16.2159459Z latest: Pulling from postman/newman
+2023-02-09T08:00:16.2160873Z fa637f525e1a: Pulling fs layer
+2023-02-09T08:00:17.0303404Z fa637f525e1a: Verifying Checksum
+2023-02-09T08:00:17.0304124Z fa637f525e1a: Download complete
+2023-02-09T08:00:19.3714989Z fa637f525e1a: Pull complete
+2023-02-09T08:00:19.3765492Z Digest: sha256:8c6463863869941ab58a27655a6810fcdc01943cef82cfbda73bd6459e1751fa
+2023-02-09T08:00:19.3782289Z Status: Downloaded newer image for postman/newman:latest
+2023-02-09T08:00:19.3804939Z docker.io/postman/newman:latest
+2023-02-09T08:00:19.3935729Z ##[command]/usr/bin/docker create --name 1c931717376f4b4b88d2fa564e0dc41a_postmannewman_82f04b --label 49859c --workdir /__w/Postman-Reports/Postman-Reports --network github_network_d7336174b127467b84c112170961cd1b  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/runners/2.301.1/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" postman/newman "-f" "/dev/null"
+2023-02-09T08:00:20.1864233Z df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b
+2023-02-09T08:00:20.1878797Z ##[command]/usr/bin/docker start df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b
+2023-02-09T08:00:20.5616352Z df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b
+2023-02-09T08:00:20.5639891Z ##[command]/usr/bin/docker ps --all --filter id=df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2023-02-09T08:00:20.5826195Z df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b Up Less than a second
+2023-02-09T08:00:20.5847434Z ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b
+2023-02-09T08:00:20.6037963Z CI=true
+2023-02-09T08:00:20.6038759Z HOME=/github/home
+2023-02-09T08:00:20.6039025Z GITHUB_ACTIONS=true
+2023-02-09T08:00:20.6039304Z PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2023-02-09T08:00:20.6039620Z NODE_VERSION=16.13.1
+2023-02-09T08:00:20.6039832Z YARN_VERSION=1.22.15
+2023-02-09T08:00:20.6040046Z LC_ALL=en_US.UTF-8
+2023-02-09T08:00:20.6040238Z LANG=en_US.UTF-8
+2023-02-09T08:00:20.6040454Z LANGUAGE=en_US.UTF-8
+2023-02-09T08:00:20.6040691Z ALPINE_NODE_REPO=oznu/alpine-node
+2023-02-09T08:00:20.6065635Z ##[endgroup]
+2023-02-09T08:00:20.6097754Z ##[group]Waiting for all services to be ready
+2023-02-09T08:00:20.6099408Z ##[endgroup]
+2023-02-09T08:00:20.6465096Z ##[group]Run actions/checkout@v3
+2023-02-09T08:00:20.6465610Z with:
+2023-02-09T08:00:20.6465864Z   repository: Diana-2604/Postman-Reports
+2023-02-09T08:00:20.6466376Z   token: ***
+2023-02-09T08:00:20.6466582Z   ssh-strict: true
+2023-02-09T08:00:20.6466809Z   persist-credentials: true
+2023-02-09T08:00:20.6467019Z   clean: true
+2023-02-09T08:00:20.6467220Z   fetch-depth: 1
+2023-02-09T08:00:20.6467425Z   lfs: false
+2023-02-09T08:00:20.6467606Z   submodules: false
+2023-02-09T08:00:20.6467841Z   set-safe-directory: true
+2023-02-09T08:00:20.6468059Z ##[endgroup]
+2023-02-09T08:00:20.6608761Z ##[command]/usr/bin/docker exec  df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b sh -c "cat /etc/*release | grep ^ID"
+2023-02-09T08:00:22.6878507Z Syncing repository: Diana-2604/Postman-Reports
+2023-02-09T08:00:22.6955269Z ##[group]Getting Git version info
+2023-02-09T08:00:22.6955854Z Working directory is '/__w/Postman-Reports/Postman-Reports'
+2023-02-09T08:00:22.6976892Z ##[endgroup]
+2023-02-09T08:00:22.6983222Z Deleting the contents of '/__w/Postman-Reports/Postman-Reports'
+2023-02-09T08:00:22.6990246Z The repository will be downloaded using the GitHub REST API
+2023-02-09T08:00:22.6990658Z To create a local Git repository instead, add Git 2.18 or higher to the PATH
+2023-02-09T08:00:22.6995829Z Downloading the archive
+2023-02-09T08:00:23.4375736Z Writing archive to disk
+2023-02-09T08:00:23.4390451Z Extracting the archive
+2023-02-09T08:00:23.4423813Z [command]/bin/tar xz -C /__w/Postman-Reports/Postman-Reports/ed1a95d4-bbc8-4d5d-82d5-3ff0ee3d6829 -f /__w/Postman-Reports/Postman-Reports/ed1a95d4-bbc8-4d5d-82d5-3ff0ee3d6829.tar.gz
+2023-02-09T08:00:23.4560610Z Resolved version Diana-2604-Postman-Reports-a871f25
+2023-02-09T08:00:23.4997854Z ##[group]Run newman run "New_REST_Collection.postman_collection.json"
+2023-02-09T08:00:23.4998268Z [36;1mnewman run "New_REST_Collection.postman_collection.json"[0m
+2023-02-09T08:00:23.5002087Z shell: sh -e {0}
+2023-02-09T08:00:23.5002308Z ##[endgroup]
+2023-02-09T08:00:24.6210215Z newman
+2023-02-09T08:00:24.6212530Z 
+2023-02-09T08:00:24.6212895Z New REST Collection
+2023-02-09T08:00:24.6245506Z 
+2023-02-09T08:00:24.6246660Z ❏ GET requests
+2023-02-09T08:00:24.6247777Z ↳ List Users
+2023-02-09T08:00:24.8005986Z   GET https://reqres.in/api/users?page=2 [200 OK, 1.77kB, 138ms]
+2023-02-09T08:00:24.8263802Z   ✓  Status code is 200
+2023-02-09T08:00:24.8273993Z   ✓  Verify that page equals 2
+2023-02-09T08:00:24.8417793Z 
+2023-02-09T08:00:24.8418503Z ↳ Single User
+2023-02-09T08:00:24.8708674Z   GET https://reqres.in/api/users/2 [200 OK, 1.02kB, 19ms]
+2023-02-09T08:00:24.8819015Z   ✓  Status code is 200
+2023-02-09T08:00:24.8826032Z   ✓  Body contains email
+2023-02-09T08:00:24.8875184Z 
+2023-02-09T08:00:24.8875702Z ↳ Single User Not Found
+2023-02-09T08:00:25.2258187Z   GET https://reqres.in/api/users/23 [404 Not Found, 719B, 330ms]
+2023-02-09T08:00:25.2382813Z   ✓  Status code is 404
+2023-02-09T08:00:25.2432669Z 
+2023-02-09T08:00:25.2433407Z ↳ List <Resourse>
+2023-02-09T08:00:25.2719661Z   GET https://reqres.in/api/unknown [200 OK, 1.45kB, 19ms]
+2023-02-09T08:00:25.2831230Z   ✓  Status code is 200
+2023-02-09T08:00:25.2838046Z   ✓  Total_pages equals 2
+2023-02-09T08:00:25.2898383Z 
+2023-02-09T08:00:25.2898968Z ↳ Single <Resourse>
+2023-02-09T08:00:25.3176892Z   GET https://reqres.in/api/unknown/2 [200 OK, 979B, 20ms]
+2023-02-09T08:00:25.3282937Z   ✓  Status code is 200
+2023-02-09T08:00:25.3295430Z   ✓  Body contains name
+2023-02-09T08:00:25.3308253Z   ✓  Name equals fuchsia rose
+2023-02-09T08:00:25.3360891Z 
+2023-02-09T08:00:25.3361786Z ↳ Single <Resourse> Not Found
+2023-02-09T08:00:25.6695784Z   GET https://reqres.in/api/unknown/23 [404 Not Found, 719B, 326ms]
+2023-02-09T08:00:25.6792764Z   ✓  Status code is 404
+2023-02-09T08:00:25.6798731Z   ✓  Body matches string
+2023-02-09T08:00:25.6886208Z 
+2023-02-09T08:00:25.6887160Z ↳ Delayed Response
+2023-02-09T08:00:29.0115323Z   GET https://reqres.in/api/users?delay=3 [200 OK, 1.69kB, 3.3s]
+2023-02-09T08:00:29.0316240Z   ✓  Status code is 200
+2023-02-09T08:00:29.0322186Z   ✓  Response time is more than 3 s
+2023-02-09T08:00:29.0395961Z 
+2023-02-09T08:00:29.0396590Z ❏ POST requests
+2023-02-09T08:00:29.0396848Z ↳ Create User
+2023-02-09T08:00:29.3736459Z   POST https://reqres.in/api/users [201 Created, 750B, 324ms]
+2023-02-09T08:00:29.3911423Z   ✓  Successful POST request
+2023-02-09T08:00:29.3924481Z   ✓  Status code name equals Created
+2023-02-09T08:00:29.3929401Z   ✓  Body contains id
+2023-02-09T08:00:29.4031226Z 
+2023-02-09T08:00:29.4031793Z ↳ Register - Successful
+2023-02-09T08:00:29.7285378Z   POST https://reqres.in/api/register [200 OK, 691B, 317ms]
+2023-02-09T08:00:29.7482097Z   ✓  Status code is 200
+2023-02-09T08:00:29.7482469Z   ✓  Body contains token
+2023-02-09T08:00:29.7529798Z 
+2023-02-09T08:00:29.7530296Z ↳ Register - Unsuccessful
+2023-02-09T08:00:30.1059706Z   POST https://reqres.in/api/register [400 Bad Request, 692B, 344ms]
+2023-02-09T08:00:30.1253035Z   ✓  Status code is 400
+2023-02-09T08:00:30.1258751Z   ✓  Status code name equals Bad Request
+2023-02-09T08:00:30.1316818Z 
+2023-02-09T08:00:30.1317683Z ↳ Login - Successful
+2023-02-09T08:00:30.4822517Z   POST https://reqres.in/api/login [200 OK, 682B, 343ms]
+2023-02-09T08:00:30.4921406Z   ✓  Status code is 200
+2023-02-09T08:00:30.4930316Z   ✓  Body contains token
+2023-02-09T08:00:30.4988955Z 
+2023-02-09T08:00:30.4989404Z ↳ Login - Unsuccessful
+2023-02-09T08:00:30.8240048Z   POST https://reqres.in/api/login [400 Bad Request, 698B, 317ms]
+2023-02-09T08:00:30.8344741Z   ✓  Status code is 400
+2023-02-09T08:00:30.8349475Z   ✓  Body contains error message
+2023-02-09T08:00:30.8395489Z 
+2023-02-09T08:00:30.8396112Z ❏ PUT requests
+2023-02-09T08:00:30.8396403Z ↳ Update
+2023-02-09T08:00:31.1669776Z   PUT https://reqres.in/api/users/2 [200 OK, 784B, 320ms]
+2023-02-09T08:00:31.1868807Z   ✓  Status code is 200
+2023-02-09T08:00:31.1917908Z   ✓  Body contains update info
+2023-02-09T08:00:31.2038518Z 
+2023-02-09T08:00:31.2039016Z ❏ PATCH requests
+2023-02-09T08:00:31.2039307Z ↳ Update
+2023-02-09T08:00:31.5408805Z   PATCH https://reqres.in/api/users/2 [200 OK, 769B, 329ms]
+2023-02-09T08:00:31.5522655Z   ✓  Status code is 200
+2023-02-09T08:00:31.5525025Z   ✓  Verify job update
+2023-02-09T08:00:31.5591699Z 
+2023-02-09T08:00:31.5592443Z ❏ DELETE requests
+2023-02-09T08:00:31.5592943Z ↳ Delete
+2023-02-09T08:00:31.8947085Z   DELETE https://reqres.in/api/users/2 [204 No Content, 612B, 328ms]
+2023-02-09T08:00:31.9105308Z   ✓  Status code is 204
+2023-02-09T08:00:31.9109551Z   ✓  Status code name equals No Content
+2023-02-09T08:00:31.9248581Z 
+2023-02-09T08:00:31.9249245Z ┌─────────────────────────┬────────────────────┬───────────────────┐
+2023-02-09T08:00:31.9249725Z │                         │           executed │            failed │
+2023-02-09T08:00:31.9250144Z ├─────────────────────────┼────────────────────┼───────────────────┤
+2023-02-09T08:00:31.9250507Z │              iterations │                  1 │                 0 │
+2023-02-09T08:00:31.9250957Z ├─────────────────────────┼────────────────────┼───────────────────┤
+2023-02-09T08:00:31.9251315Z │                requests │                 15 │                 0 │
+2023-02-09T08:00:31.9251701Z ├─────────────────────────┼────────────────────┼───────────────────┤
+2023-02-09T08:00:31.9252077Z │            test-scripts │                 30 │                 0 │
+2023-02-09T08:00:31.9252490Z ├─────────────────────────┼────────────────────┼───────────────────┤
+2023-02-09T08:00:31.9253002Z │      prerequest-scripts │                 15 │                 0 │
+2023-02-09T08:00:31.9253438Z ├─────────────────────────┼────────────────────┼───────────────────┤
+2023-02-09T08:00:31.9253794Z │              assertions │                 31 │                 0 │
+2023-02-09T08:00:31.9254211Z ├─────────────────────────┴────────────────────┴───────────────────┤
+2023-02-09T08:00:31.9254558Z │ total run duration: 7.2s                                         │
+2023-02-09T08:00:31.9254970Z ├──────────────────────────────────────────────────────────────────┤
+2023-02-09T08:00:31.9255343Z │ total data received: 3.61kB (approx)                             │
+2023-02-09T08:00:31.9255761Z ├──────────────────────────────────────────────────────────────────┤
+2023-02-09T08:00:31.9256131Z │ average response time: 452ms [min: 19ms, max: 3.3s, s.d.: 774ms] │
+2023-02-09T08:00:31.9256553Z └──────────────────────────────────────────────────────────────────┘
+2023-02-09T08:00:31.9462855Z Post job cleanup.
+2023-02-09T08:00:31.9467650Z ##[command]/usr/bin/docker exec  df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b sh -c "cat /etc/*release | grep ^ID"
+2023-02-09T08:00:32.2824059Z Stop and remove container: 1c931717376f4b4b88d2fa564e0dc41a_postmannewman_82f04b
+2023-02-09T08:00:32.2830261Z ##[command]/usr/bin/docker rm --force df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b
+2023-02-09T08:00:32.4403109Z df3803309acf8a9f3210c327ab5578513225cdb830305708704aba85563dff5b
+2023-02-09T08:00:32.4443416Z Remove container network: github_network_d7336174b127467b84c112170961cd1b
+2023-02-09T08:00:32.4449052Z ##[command]/usr/bin/docker network rm github_network_d7336174b127467b84c112170961cd1b
+2023-02-09T08:00:32.5398312Z github_network_d7336174b127467b84c112170961cd1b
+2023-02-09T08:00:32.5542595Z Cleaning up orphan processes
