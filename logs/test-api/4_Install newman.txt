@@ -1,0 +1,30 @@
+2023-02-09T08:21:50.2454863Z ##[group]Run npm install -g newman
+2023-02-09T08:21:50.2455198Z [36;1mnpm install -g newman[0m
+2023-02-09T08:21:50.2455464Z [36;1mnpm install -g newman-reporter-htmlextra[0m
+2023-02-09T08:21:50.2512493Z shell: /usr/bin/bash -e {0}
+2023-02-09T08:21:50.2512728Z ##[endgroup]
+2023-02-09T08:21:58.0717998Z npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+2023-02-09T08:21:58.1305394Z npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+2023-02-09T08:21:58.1310344Z npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+2023-02-09T08:21:59.2113482Z 
+2023-02-09T08:21:59.2114319Z added 112 packages, and audited 113 packages in 5s
+2023-02-09T08:21:59.2125793Z 
+2023-02-09T08:21:59.2126251Z 6 packages are looking for funding
+2023-02-09T08:21:59.2127739Z   run `npm fund` for details
+2023-02-09T08:21:59.2140912Z 
+2023-02-09T08:21:59.2141176Z found 0 vulnerabilities
+2023-02-09T08:22:03.4309773Z npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+2023-02-09T08:22:03.6393855Z npm WARN deprecated source-map-url@0.4.1: See https://github.com/lydell/source-map-url#deprecated
+2023-02-09T08:22:03.6399718Z npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+2023-02-09T08:22:03.7488219Z npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+2023-02-09T08:22:03.8768427Z npm WARN deprecated gulp-header@1.8.12: Removed event-stream from gulp-header
+2023-02-09T08:22:03.8951375Z npm WARN deprecated source-map-resolve@0.5.3: See https://github.com/lydell/source-map-resolve#deprecated
+2023-02-09T08:22:03.9090088Z npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+2023-02-09T08:22:03.9096762Z npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+2023-02-09T08:22:05.0353342Z 
+2023-02-09T08:22:05.0354016Z added 308 packages, and audited 309 packages in 6s
+2023-02-09T08:22:05.0361967Z 
+2023-02-09T08:22:05.0362877Z 8 packages are looking for funding
+2023-02-09T08:22:05.0364457Z   run `npm fund` for details
+2023-02-09T08:22:05.0376890Z 
+2023-02-09T08:22:05.0377109Z found 0 vulnerabilities

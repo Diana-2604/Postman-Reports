@@ -1,0 +1,4 @@
+2023-02-09T08:22:05.0546135Z ##[group]Run mkdir -p testResults
+2023-02-09T08:22:05.0546405Z [36;1mmkdir -p testResults[0m
+2023-02-09T08:22:05.0599400Z shell: /usr/bin/bash -e {0}
+2023-02-09T08:22:05.0599623Z ##[endgroup]

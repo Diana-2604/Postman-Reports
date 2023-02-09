@@ -1,0 +1,8 @@
+2023-02-09T08:21:48.6886719Z ##[group]Run actions/setup-node@v2
+2023-02-09T08:21:48.6886966Z with:
+2023-02-09T08:21:48.6887366Z   node-version: 16.x
+2023-02-09T08:21:48.6887577Z   always-auth: false
+2023-02-09T08:21:48.6887775Z   check-latest: false
+2023-02-09T08:21:48.6888129Z   token: ***
+2023-02-09T08:21:48.6888316Z ##[endgroup]
+2023-02-09T08:21:50.2321211Z Found in cache @ /opt/hostedtoolcache/node/16.19.0/x64
